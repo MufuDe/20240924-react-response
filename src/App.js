@@ -1,26 +1,13 @@
-function Button({ onClick, children }) {
+export default function Signup() {
   return (
-    <button
-      onClick={(e) => {
-        e.stopPropagation();
-        onClick();
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        alert("提交表单！");
       }}
     >
-      {children}
-    </button>
-  );
-}
-
-export default function Toolbar() {
-  return (
-    <div
-      className="Toolbar"
-      onClickCapture={() => {
-        alert("你点击了 toolbar ！");
-      }}
-    >
-      <Button onClick={() => alert("正在播放！")}>播放电影</Button>
-      <Button onClick={() => alert("正在上传！")}>上传图片</Button>
-    </div>
+      <input />
+      <button>发送</button>
+    </form>
   );
 }
